@@ -67,8 +67,6 @@ export default function GlobalData() {
     }
     fetchGlobalData();
   },[])
-
-  const loading = 'Loading...';
   
   if(dataLoding) {
     return (

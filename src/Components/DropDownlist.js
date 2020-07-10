@@ -22,18 +22,15 @@ const useStyles = makeStyles((theme) => ({
 export default function AllCountries() {
   
     const [allCountryData, setAllCountryData] = useState([{}]);
-    const [dataLoding, setDataLoading] = useState(false);
     const [dropDownValue, setDropDownValue] = useState("PK");
 
 
     useEffect( () => {
-      setDataLoading(true);
       async function fetchAllCountryData() {
         const apiResponse = await fetch("https://api.thevirustracker.com/free-api?countryTotals=ALL");
         const apiData = await apiResponse.json();
         setAllCountryData(Object.values(Object.values(apiData.countryitems)[0]));
         console.log("myData",Object.values(Object.values(apiData.countryitems)[0]));
-        setDataLoading(false);
       }
       fetchAllCountryData();
     },[])
