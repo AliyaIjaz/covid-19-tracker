@@ -35,6 +35,9 @@ jobs:
     - name: installing surge
       run: npm install -g surge 
       
+    - name: making build file
+      run: yarn build
+      
     - name: depolying app on surge
       run: surge ./build http://covid19-trackerapp-aliyaijaz.surge.sh --token ${{secrets.SURGE_TOKEN}}     
 
