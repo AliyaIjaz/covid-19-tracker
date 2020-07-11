@@ -4,7 +4,7 @@ import {Bar} from 'react-chartjs-2';
 export default function BarGraph(props) {
 
     const data = {
-       // labels: ['Coronavirus Cases'],
+        labels: ['Coronavirus Cases'],
         datasets: [
           {
             label: 'Total Cases',
