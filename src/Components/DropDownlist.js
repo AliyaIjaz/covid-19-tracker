@@ -59,7 +59,9 @@ export default function AllCountries() {
     const classes = useStyles();
     let allCountries = [];
     allCountries = allCountryData.map((key, ind)=> 
-    <option key = {allCountryData[ind].title} value = {allCountryData[ind].code}>{allCountryData[ind].title}</option>
+    <option 
+    key = {allCountryData[ind].title} value = {allCountryData[ind].code}>{allCountryData[ind].title}
+    </option>
      );
     
     return (

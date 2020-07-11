@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import NumberFormat from 'react-number-format';
+import CountUp from 'react-countup';
 import BarGraph from './bar';
 import PieChart from './Pie';
 
@@ -52,7 +52,7 @@ export default function CountryData(props) {
             </div>
             <div className={classesTypography.root} style={{ color: 'blue' }}>
               <Typography variant="h6" gutterBottom>
-              <NumberFormat value={props.totalCases} displayType={'text'} thousandSeparator={true} />
+                <CountUp start={0} duration = {2} end = {props.totalCases} separator = ',' />
               </Typography>
             </div>
           </Paper>
@@ -66,7 +66,7 @@ export default function CountryData(props) {
             </div>
             <div className={classesTypography.root} style={{ color: 'orange' }}>
               <Typography variant="h6" gutterBottom>
-              <NumberFormat value={props.totalActive} displayType={'text'} thousandSeparator={true} />
+              <CountUp start={0} duration = {2} end = {props.totalActive} separator = ',' />
               </Typography>
             </div>
           </Paper>
@@ -80,7 +80,7 @@ export default function CountryData(props) {
             </div>
             <div className={classesTypography.root} style={{ color: 'green' }}>
               <Typography variant="h6" gutterBottom>
-              <NumberFormat value={props.totalRecovered} displayType={'text'} thousandSeparator={true} />
+              <CountUp start={0} duration = {2} end = {props.totalRecovered} separator = ',' />
               </Typography>
             </div>
           </Paper>
@@ -94,7 +94,7 @@ export default function CountryData(props) {
             </div>
             <div className={classesTypography.root} style={{ color: 'red' }}>
               <Typography variant="h6" gutterBottom>
-              <NumberFormat value={props.totalDeaths} displayType={'text'} thousandSeparator={true} />
+              <CountUp start={0} duration = {2} end = {props.totalDeaths} separator = ',' />
               </Typography>
             </div>
           </Paper>
@@ -109,7 +109,7 @@ export default function CountryData(props) {
             </div>
             <div className={classesTypography.root} style={{ color: 'blue' }}>
               <Typography variant="h6" gutterBottom>
-              <NumberFormat value= {props.totalNewCasesToday} displayType={'text'} thousandSeparator={true} />               
+              <CountUp start={0} duration = {2} end = {props.totalNewCasesToday} separator = ',' />
               </Typography>
             </div>
           </Paper>
@@ -123,7 +123,7 @@ export default function CountryData(props) {
             </div>
             <div className={classesTypography.root} style={{ color: 'red' }}>
               <Typography variant="h6" gutterBottom>
-              <NumberFormat value= {props.totalDeathsToday} displayType={'text'} thousandSeparator={true} />               
+              <CountUp start={0} duration = {2} end = {props.totalDeathsToday} separator = ',' />
               </Typography>
             </div>
           </Paper>

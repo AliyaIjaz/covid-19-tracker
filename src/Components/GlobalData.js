@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import NumberFormat from 'react-number-format';
 import CountUp from 'react-countup';
 
 
@@ -67,6 +66,7 @@ export default function GlobalData() {
     }
     fetchGlobalData();
   },[])
+  const loading = 'Loading...';
   
   if(dataLoding) {
     return (
@@ -74,7 +74,7 @@ export default function GlobalData() {
         <Paper elevation={3}>
            <div className = {classesTypography.root1}>
               <Typography variant="h4" gutterBottom>
-         <CountUp start = {0} duration={2} end = {100000000} separator="," />
+                 {loading}
                </Typography>
               <Typography variant="subtitle2" gutterBottom>
                   Total Cases Of Cronavirus Globally
@@ -85,7 +85,7 @@ export default function GlobalData() {
         <Paper elevation={3}>
            <div className = {classesTypography.root2}>
               <Typography variant="h4" gutterBottom>
-              <CountUp start = {0} duration={2} end = {100000} separator="," />
+                {loading}
                </Typography>
               <Typography variant="subtitle2" gutterBottom>
                  Total Active cases
@@ -96,7 +96,7 @@ export default function GlobalData() {
         <Paper elevation={3}>
            <div className = {classesTypography.root3}>
               <Typography variant="h4" gutterBottom>
-              <CountUp start = {0} duration={2} end = {10000000} separator="," />
+               {loading}
                </Typography>
               <Typography variant="subtitle2" gutterBottom>
                  Total Recovered
@@ -107,7 +107,7 @@ export default function GlobalData() {
         <Paper elevation={3}>
            <div className = {classesTypography.root4}>
               <Typography variant="h4" gutterBottom>
-              <CountUp start = {0} duration={2} end = {1000000} separator="," />
+               {loading}
                </Typography>
               <Typography variant="subtitle2" gutterBottom>
                  Total Deaths
@@ -123,7 +123,7 @@ export default function GlobalData() {
       <Paper elevation={3}>
          <div className = {classesTypography.root1}>
             <Typography variant="h4" gutterBottom>
-              <NumberFormat value={globalData && globalData.results && globalData.results[0].total_cases} displayType={'text'} thousandSeparator={true} />
+            <CountUp start = {0} duration={2} end = {globalData && globalData.results && globalData.results[0].total_cases} separator="," />
              </Typography>
             <Typography variant="subtitle2" gutterBottom>
                Total Cases Of Cronavirus Globally
@@ -134,8 +134,8 @@ export default function GlobalData() {
       <Paper elevation={3}>
          <div className = {classesTypography.root2}>
             <Typography variant="h4" gutterBottom>
-              <NumberFormat value={globalData && globalData.results && globalData.results[0].total_active_cases} displayType={'text'} thousandSeparator={true} />
-             </Typography>
+            <CountUp start = {0} duration={2} end = {globalData && globalData.results && globalData.results[0].total_active_cases} separator="," />
+              </Typography>
             <Typography variant="subtitle2" gutterBottom>
                Total Active Cases
             </Typography>
@@ -145,7 +145,7 @@ export default function GlobalData() {
       <Paper elevation={3}>
          <div className = {classesTypography.root3}>
             <Typography variant="h4" gutterBottom>
-            <NumberFormat value={globalData && globalData.results && globalData.results[0].total_recovered} displayType={'text'} thousandSeparator={true} />
+            <CountUp start = {0} duration={2} end = {globalData && globalData.results && globalData.results[0].total_recovered} separator="," />
              </Typography>
             <Typography variant="subtitle2" gutterBottom>
                Total Recovered
@@ -156,7 +156,7 @@ export default function GlobalData() {
       <Paper elevation={3}>
          <div className = {classesTypography.root4}>
             <Typography variant="h4" gutterBottom>
-            <NumberFormat value={globalData && globalData.results && globalData.results[0].total_deaths} displayType={'text'} thousandSeparator={true} />
+              <CountUp start = {0} duration={2} end = {globalData && globalData.results && globalData.results[0].total_deaths} separator="," />
              </Typography>
             <Typography variant="subtitle2" gutterBottom>
                Total Deaths
