@@ -1,5 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+This app is deployed on surge
+http://covid19-trackerapp-aliyaijaz.surge.sh 
+
 ## Available Scripts
 
 In the project directory, you can run:
